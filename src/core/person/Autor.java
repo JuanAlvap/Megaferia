@@ -4,9 +4,22 @@ import core.libro.Libro;
 import core.megaferia.Editorial;
 import java.util.ArrayList;
 
-public class Autor {
+public class Autor extends Persona {
 
     private ArrayList<Libro> libros;
+
+    public Autor(ArrayList<Libro> libros, String nombre, int cedula) {
+        super(nombre, cedula);
+        this.libros = new ArrayList<>();
+    }
+
+    public boolean addLibro(Libro libro) {
+        if (this.libros.contains(libro)) {
+            this.libros.add(libro);
+            return true;
+        }
+        return false;
+    }
 
     public int obtenerNumEditoriales() {
         ArrayList<Editorial> editoriales = new ArrayList<>();

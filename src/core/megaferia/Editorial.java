@@ -6,14 +6,34 @@ import core.person.Gerente;
 import java.util.ArrayList;
 
 public class Editorial {
-
+    
     private String nit;
     private String nombre;
     private String direccion;
     private Gerente gerente;
     private ArrayList<Libro> libros;
     private ArrayList<Stand> stands;
-
+    
+    public Editorial(String nit, String nombre, String direccion, Gerente gerente) {
+        this.nit = nit;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.gerente = gerente;
+        this.libros = new ArrayList<>();
+        this.stands = new ArrayList<>();
+        
+        this.gerente.setEditorial(this);
+        
+    }
+    
+    public boolean addLibro(Libro libro) {
+        if (this.libros.contains(libro)) {
+            this.libros.add(libro);
+            return true;
+        }
+        return false;
+    }
+    
     public ArrayList<Autor> obtenerAutores() {
         ArrayList<Autor> autores = new ArrayList<>();
         for (Libro libro : this.libros) {
@@ -26,5 +46,5 @@ public class Editorial {
         }
         return autores;
     }
-
+    
 }
