@@ -18,6 +18,13 @@ public class Stand {
         Stand.idCount++;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "("
+    }
+    
+    
+
     public int getId() {
         return this.id;
     }
