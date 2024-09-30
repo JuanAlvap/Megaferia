@@ -1,6 +1,7 @@
 package core.person;
 
 import core.libro.AudioLibro;
+import core.libro.Libro;
 import java.util.ArrayList;
 
 public class Narrador extends Persona{

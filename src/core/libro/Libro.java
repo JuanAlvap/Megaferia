@@ -23,10 +23,17 @@ public abstract class Libro {
         this.valor = valor;
         this.editorial = editorial;
         
+        
+        
         for (Autor autor : this.autores) {
             autor.addLibro(this);
         }
         this.editorial.addLibro(this);
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" + this.titulo + ", " + this.isbn + ")";
     }
     
     
