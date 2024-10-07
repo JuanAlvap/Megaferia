@@ -24,7 +24,7 @@ public class Stand {
     }
 
     public boolean addEditorial(Editorial editorial) {
-        if (this.editoriales.contains(editorial)) {
+        if (!this.editoriales.contains(editorial)) {
             this.editoriales.add(editorial);
             return true;
         }

@@ -27,7 +27,7 @@ public class Editorial {
     }
 
     public boolean addStand(Stand stand) {
-        if (this.stands.contains(stand)) {
+        if (!this.stands.contains(stand)) {
             this.stands.add(stand);
             return true;
         }
@@ -37,6 +37,11 @@ public class Editorial {
     public Gerente getGerente() {
         return gerente;
     }
+
+    public ArrayList<Libro> getLibros() {
+        return libros;
+    }
+    
 
     public ArrayList<Stand> getStands() {
         return stands;
@@ -48,7 +53,7 @@ public class Editorial {
     }
 
     public boolean addLibro(Libro libro) {
-        if (this.libros.contains(libro)) {
+        if (!this.libros.contains(libro)) {
             this.libros.add(libro);
             return true;
         }

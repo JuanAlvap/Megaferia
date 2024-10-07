@@ -5,7 +5,7 @@ import core.person.Autor;
 import java.util.ArrayList;
 
 public abstract class Libro {
-    
+
     protected String titulo;
     protected ArrayList<Autor> autores;
     protected String isbn;
@@ -22,9 +22,7 @@ public abstract class Libro {
         this.formato = formato;
         this.valor = valor;
         this.editorial = editorial;
-        
-        
-        
+
         for (Autor autor : this.autores) {
             autor.addLibro(this);
         }
@@ -35,7 +33,12 @@ public abstract class Libro {
     public String toString() {
         return getClass().getSimpleName() + "(" + this.titulo + ", " + this.isbn + ")";
     }
-    
-    
-    
+
+    public ArrayList<Autor> getAutores() {
+        return autores;
+    }
+
+    public Editorial getEditorial() {
+        return editorial;
+    }
 }

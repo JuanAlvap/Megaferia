@@ -14,18 +14,22 @@ public class Autor extends Persona {
     }
 
     public boolean addLibro(Libro libro) {
-        if (this.libros.contains(libro)) {
+        if (!this.libros.contains(libro)) {
             this.libros.add(libro);
             return true;
         }
         return false;
     }
 
+    public ArrayList<Libro> getLibros() {
+        return libros;
+    }
+
     public int obtenerNumEditoriales() {
         ArrayList<Editorial> editoriales = new ArrayList<>();
         for (Libro libro : this.libros) {
             if (!editoriales.contains(libro.getEditorial())) {
-                editoriales.add(libro.getEditorial())
+                editoriales.add(libro.getEditorial());
             }
         }
         return editoriales.size();
